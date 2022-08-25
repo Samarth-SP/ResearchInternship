@@ -19,4 +19,4 @@ KNN.train(sentence_embeddings)
 KNN.add(sentence_embeddings)
 D, I = KNN.search(query_embedding, n)
 for val in I[0]:
-    st.write(data.iloc[val]['title'])
+    st.write(data.isloc[val]['title'])
