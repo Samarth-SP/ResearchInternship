@@ -18,5 +18,8 @@ KNN = faiss.IndexIVFFlat(quantizer, dimension, n)
 KNN.train(sentence_embeddings)
 KNN.add(sentence_embeddings)
 D, I = KNN.search(query_embedding, n)
+arxivpre = 'https://www.doi.org/'
 for val in I[0]:
-    st.write(data.isloc[val]['title'])
+    name = data.iloc[val]['title']
+    doi = data.iloc[val]['doi']
+    st.markdown(f'[{name}]({arxivpre + doi})')
